@@ -39,16 +39,13 @@ let todoList = [
     
        for(let i=0;i<todoList.length;i++)
       {
-        let item = todoList[i].item;
-        let dueDate = todoList[i].dueDate;
-        newHtml += 
-        `
-        <span>${item}</span>
+        let {item, dueDate} = todoList[i];
+        newHtml += `
+       <span>${item}</span>
         <span>${dueDate}</span>
-        <button  class="btn-delete" onclick="todoList.splice(${i},1);
-        displayItems();">Delete</button>
-        
-        `;
+       <button class='btn-delete' onclick="todoList.splice(${i}, 1);
+       displayItems();">Delete</button>
+       `;
       }
        containerElement.innerHTML = newHtml;
     }
